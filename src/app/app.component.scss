@@ -1,0 +1,11 @@
+.person-continer {
+    display: flex;
+    justify-content: space-around;
+    // padding: 10px;
+    app-create-person{
+        width: 40%;
+    }
+    app-person{
+        width: 40%;
+    }
+}

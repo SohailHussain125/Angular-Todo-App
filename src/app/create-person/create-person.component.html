@@ -1,0 +1,25 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="personForm">
+        <h3>Create Person</h3>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" formControlName="name">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" formControlName="email">
+
+        <label for="mobile">Mobile</label>
+        <input type="number" id="mobile" name="mobile" placeholder="Mobile number.." formControlName="mobile">
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Age.." formControlName="age">
+        <input type="radio" id="male" name="gender" value="male" formControlName="gender">
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+          <label for="female">Female</label><br><br>
+
+        <div class="button-div">
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
