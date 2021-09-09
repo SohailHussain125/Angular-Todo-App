@@ -7,7 +7,6 @@ import { Iperson } from './interface/person'
   styleUrls: ['./person.component.scss']
 })
 export class PersonComponent implements OnInit {
-  name = "sasadsadasd";
   @Input() newItem;
 
   persons: Iperson[] = [];

@@ -9,9 +9,6 @@ export class AppComponent {
   getData(item) {
     this.itemFromParent = item
   }
-  // newItem = "dkasdksjh"
   itemFromParent = {}
 
-  name = "Sohail"
-  title = 'LearningAngular';
 }

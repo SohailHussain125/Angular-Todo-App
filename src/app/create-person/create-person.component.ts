@@ -21,9 +21,8 @@ export class CreatePersonComponent implements OnInit {
 
 
   onSubmit() {
-    console.log(this.personForm.valid)
-   this.getData.emit(this.personForm.value);  
-   this.personForm.reset()
+    this.getData.emit(this.personForm.value);
+    this.personForm.reset()
   }
   constructor() { }
 
