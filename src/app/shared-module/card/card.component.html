@@ -2,7 +2,7 @@
     <ng-container *ngIf="isActionButton">
         <div class="card-header">
             <span class="flex-around-center icon-span">
-                <i (click)="onDeleteCard(cardItem?.id)" class="fas fa-trash" style="font-size: 30px;
+                <i (click)="onDeleteCard(cardItem?._id)" class="fas fa-trash" style="font-size: 30px;
                 color: #ccc;"></i>
                 <i (click)="onUpdateCard()" class="fas fa-pen" style="font-size: 30px;
                 color: #ccc;"></i>

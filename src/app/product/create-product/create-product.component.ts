@@ -50,7 +50,9 @@ export class CreateProductComponent implements OnInit {
   isStringType(val): boolean { return typeof val === 'string'; }
 
   ngOnInit(): void {
-    this.productId = this.router.url.split("/")[this.router.url.split("/").length - 1];
+    this.productId = this.router.url.includes("/update/") &&this.router.url.split("/update/")[this.router.url.split("/update/").length - 1];
+    console.log(this.productId);
+    
     this.productId ? this.formMode = "Update" : ""
     this.productId ? this.productService.getByIdProduct(this.productId).subscribe((res: any) => {
       this.productForm.setValue({

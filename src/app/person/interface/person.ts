@@ -1,5 +1,5 @@
 export interface Iperson {
-    id: string;
+    _id: string;
     name: string;
     age: number;
     mobile: string;

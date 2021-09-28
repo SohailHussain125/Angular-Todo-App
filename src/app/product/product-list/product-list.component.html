@@ -13,7 +13,7 @@
         </ng-container>
         <ng-container *ngFor="let product of products">
             <div class="col col-lg-3 col-md-4 col-sm-6 flex-center-center">
-                <app-card [item]="product" (onDelete)="onDelete(template,$event)" (onUpdate)="onUpdate(product.id)"
+                <app-card [item]="product" (onDelete)="onDelete(template,$event)" (onUpdate)="onUpdate(product._id)"
                     (moreDetail)="onMoreDetail($event)">
                 </app-card>
             </div>

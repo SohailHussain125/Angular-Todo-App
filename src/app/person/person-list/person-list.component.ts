@@ -52,7 +52,7 @@ export class PersonListComponent implements OnInit {
   deletePerson() {
     this.http.delete(`http://localhost:4000/delete-person/${this.deletePersonId}`)
       .subscribe((res: Iperson) => {
-        this.persons = this.persons.filter(item => item.id != res.id);
+        this.persons = this.persons.filter(item => item._id != res._id);
         this.modalRef.hide()
       })
   }

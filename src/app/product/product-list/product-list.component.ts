@@ -30,26 +30,31 @@ export class ProductListComponent implements OnInit {
     this.productService.getProduct().subscribe(res => this.products = res)
   }
 
-  onUpdate(id) {
-    this.route.navigateByUrl(`/product/update/${id}`)
+  onUpdate(_id) {
+    this.route.navigateByUrl(`/product/update/${_id}`)
   }
   onHide() {
     this.modalService.hide();
   }
 
-  onDelete(template: TemplateRef<any>, id) {
-    this.modalService.show(template);
-    this.deleted = id
+  onDelete(template: TemplateRef<any>, _id) {
+    this.productService.isModal.next(true)
+    // this.modalService.show(template);
+    // this.deleted = _id
   }
 
   onConfirm() {
     this.productService.deleteProduct(this.deleted)
       .subscribe((res: any) => {
-        this.products = this.products.filter(item => item.id != res.id)
+        this.products = this.products.filter(item => item._id != res._id)
         this.onHide()
       })
   }
   onMoreDetail(item: any) {
-    this.route.navigate([`/product/detail/${item.id}`])
+    this.route.navigate([`/product/detail/${item._id}`])
+  }
+  ngOnChanges(){
+    console.log(this.productService.isModal.subscribe((isloading)=>console.log(isloading,">>>>")));
+    
   }
 }
