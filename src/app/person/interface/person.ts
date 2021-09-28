@@ -1,7 +1,9 @@
 export interface Iperson {
-    name: string,
-    age: number,
-    mobile: number,
-    email: string,
-    gender:string
+    id: string;
+    name: string;
+    age: number;
+    mobile: string;
+    email: string;
+    gender: string;
+    search: boolean;
 }

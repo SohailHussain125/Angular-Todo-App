@@ -1,0 +1,47 @@
+
+.card {
+    height: 400px;
+    margin: 10px 20px;
+    position: relative;
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .card-header {
+        padding: 0%;
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        z-index: 7;
+        background: transparent;
+        .icon-span {
+            display: none;
+            width: 100%;
+         
+        }
+        &:hover {
+            background: #00000066;
+            .icon-span {
+                display: inline;
+                position: absolute;
+                // left: 50%;
+                top: 50%;
+                display: flex;
+                justify-content: center;
+                i{
+                    margin: 0px 10px;
+                    cursor: pointer;
+                }
+             
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }
+}

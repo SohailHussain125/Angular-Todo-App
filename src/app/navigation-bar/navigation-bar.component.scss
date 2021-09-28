@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    background-color: #4285f4 !important;
+    margin-bottom: 20px;
+    img {
+        flex: 1;
+        width: 70px;
+        cursor: pointer;
+    }
+    ul {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        margin: 0%;
+        flex: 4;
+        li {
+            display: flex;
+            align-items: center;
+            margin: 5px 30px;
+            list-style-type: none;
+            font-weight: bold;
+            a {
+                color: #fff;
+            }
+        }
+    }
+}

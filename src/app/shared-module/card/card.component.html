@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;">
+    <ng-container *ngIf="isActionButton">
+        <div class="card-header">
+            <span class="flex-around-center icon-span">
+                <i (click)="onDeleteCard(cardItem?.id)" class="fas fa-trash" style="font-size: 30px;
+                color: #ccc;"></i>
+                <i (click)="onUpdateCard()" class="fas fa-pen" style="font-size: 30px;
+                color: #ccc;"></i>
+            </span>
+        </div>
+    </ng-container>
+    <img [src]="cardItem?.image" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{cardItem?.name}}</h5>
+        <p *ngIf="cardItem?.description?.length < 25">{{cardItem?.description }} </p>
+        <p class="card-text" *ngIf="cardItem?.description?.length >= 25">{{cardItem?.description |
+            slice:0:35
+            }}...
+        </p>
+        <a  class="btn btn-primary" (click)="onMoreDetail(cardItem)">Detail...</a>
+    </div>
+</div>

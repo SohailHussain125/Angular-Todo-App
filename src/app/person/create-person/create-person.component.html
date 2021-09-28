@@ -1,6 +1,6 @@
 <div class="container">
     <form (ngSubmit)="onSubmit()" [formGroup]="personForm">
-        <h3>Create Person</h3>
+        <h3>{{formMode}} Person</h3>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" formControlName="name">
 

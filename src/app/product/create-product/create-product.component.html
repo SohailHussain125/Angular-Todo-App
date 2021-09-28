@@ -1,0 +1,41 @@
+<div class="container">
+    <h4>{{formMode}} Product</h4>
+    <form [formGroup]="productForm">
+
+        <div class="row">
+            <div class="col col-md-6 flex-center-center">
+                <div class="col">
+                    <label for="name" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="name" name="name" formControlName="name">
+                </div>
+            </div>
+            <div class="col col-md-6 flex-center-center">
+                <div class="col">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="price" name="price" formControlName="price">
+                </div>
+            </div>
+            <div class="col col-md-6 flex-center-center">
+                <div class="col">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="textarea" class="form-control" id="description" name="description"
+                        formControlName="description">
+                </div>
+            </div>
+            <div class="col col-md-6 flex-center-center">
+                <div class="col flex-center-center img-div">
+                    <input type="file" id="image" name="image" (change)="uploadImage($event)">
+                    <img [src]='baseUrl?baseUrl: productForm.value.file?productForm.value.file:"/assets/images/image_placeholder.jpg"'
+                        alt="">
+                    <div>upload</div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-div">
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+            <div *ngIf="isLoading" class="spinner-border" role="status">
+                <app-spinner></app-spinner>
+            </div>
+        </div>
+    </form>
+</div>

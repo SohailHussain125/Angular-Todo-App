@@ -5,10 +5,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
-  getData(item) {
-    this.itemFromParent = item
+  
+  ngOnInit() {
+    // this.router.navigateByUrl("/person-detail")
   }
-  itemFromParent = {}
-
 }

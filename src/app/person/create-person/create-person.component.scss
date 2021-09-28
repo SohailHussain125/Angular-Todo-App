@@ -2,9 +2,13 @@
 /* Style the submit button with a specific background color etc */
 /* When moving the mouse over the submit button, add a darker green color */
 /* Add a background color and some padding around the form */
+.container{
+    display: flex;
+    justify-content: center;
+}
 form {
+    width: 50%;
     border: 1px solid #ccc;
-    width: 100%;
     padding: 20px;
     border-radius: 10px;
     h3 {

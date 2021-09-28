@@ -1,0 +1,28 @@
+<div class="product-list-container">
+    <div class="search-div">
+        <input type="text" placeholder="search product...">
+    </div>
+    <div class="flex-end-center" style="width: 100%;">
+        <button [routerLink]="['create']">+ Product</button>
+    </div>
+    <div class="row">
+        <ng-container *ngIf="!products?.length">
+            <div class="flex-center-center" style="width: 100%;">
+                <h3> No product</h3>
+            </div>
+        </ng-container>
+        <ng-container *ngFor="let product of products">
+            <div class="col col-lg-3 col-md-4 col-sm-6 flex-center-center">
+                <app-card [item]="product" (onDelete)="onDelete(template,$event)" (onUpdate)="onUpdate(product.id)"
+                    (moreDetail)="onMoreDetail($event)">
+                </app-card>
+            </div>
+        </ng-container>
+    </div>
+
+    <ng-template #template>
+        <app-alert-modal [message]="'Are you sure you want to delete this Product?'" [title]="'Alert'"
+            (onHide)="onHide()" (onConfirm)="onConfirm()">
+        </app-alert-modal>
+    </ng-template>
+</div>

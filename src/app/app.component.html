@@ -1,5 +1,4 @@
-<h1 style="text-align: center;border-bottom: 1px solid #ccc;padding: 10px;">Learning Angular</h1>
-<div class="person-continer">
-    <app-create-person (getData)='getData($event)'></app-create-person>
-    <app-person [newItem]="itemFromParent"></app-person>
-</div>
+<!-- <h1 style="text-align: center;border-bottom: 1px solid #ccc;padding: 10px;">Learning Angular</h1> -->
+<!-- <a [routerLink]="['/person-detail']">Go to person Detail</a> -->
+<app-navigation-bar></app-navigation-bar>
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+.home-container {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    .carousel {
+        width: 70%;
+        border: 1px solid #ccc;
+        .slide {
+            //     .carousel-inner {
+            //       .carousel-item{
+            //           width: 500px !important;
+            //           height: 500px !important;
+            //       }
+            //     }
+        }
+    }
+}

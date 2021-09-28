@@ -1,0 +1,27 @@
+<div>
+    <div class="home-container">
+        <carousel class="carousel">
+            <slide>
+                <img src="https://i.im.ge/2021/09/15/Twjzdc.jpg" alt="first slide" style="display: block; width: 100%;">
+            </slide>
+            <slide>
+                <img src="https://i.im.ge/2021/09/14/TmBfpm.jpg" alt="second slide"
+                    style="display: block; width: 100%;">
+            </slide>
+            <slide>
+                <img src="https://i.im.ge/2021/09/15/TwmtFG.jpg" alt="third slide" style="display: block; width: 100%;">
+            </slide>
+        </carousel>
+    </div>
+    <div class="flex-center-center" style="margin:50px">
+        <div style="width: 80%;">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let product of products" class="slide">
+                    <app-card [item]="product" [isActionButton]="false" (moreDetail)="onMoreDetail($event)">
+                    </app-card>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+</div>
