@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ProductService } from 'src/app/product/product.service';
 
 @Component({
   selector: 'app-alert-modal',
@@ -20,7 +21,8 @@ export class AlertModalComponent implements OnInit, AfterViewInit {
   modalMessage: any;
   modalTitle: any;
   constructor(
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private productService: ProductService
 
   ) { }
 

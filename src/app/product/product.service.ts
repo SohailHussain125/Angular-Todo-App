@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Observable, Subject, throwError } from 'rxjs';
+import { Injectable, TemplateRef } from '@angular/core';
+import { Observable, Subject, throwError, BehaviorSubject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
@@ -7,7 +7,10 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   providedIn: 'root'
 })
 export class ProductService {
-  isModal = new Subject<boolean>();
+  modal = new Subject<{ open: boolean; template: TemplateRef<any> }>();
+  flag = new BehaviorSubject<{ v: boolean, a: string }>({ a: "true", v: true });
+  flag2 = new Observable<{ name: string, age: number }>();
+
   apiUrl: string = 'http://localhost:4000';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
@@ -27,7 +30,7 @@ export class ProductService {
       )
   }
 
-  updateProduct(data,id): Observable<any> {
+  updateProduct(data, id): Observable<any> {
     let API_URL = `${this.apiUrl}/update-product/${id}`;
     let formData = new FormData();
     formData.append(`image`, data.file)
@@ -71,5 +74,6 @@ export class ProductService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
+
 }
 

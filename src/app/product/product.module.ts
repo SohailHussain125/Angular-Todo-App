@@ -19,6 +19,6 @@ import { ProductService } from './product.service';
     ReactiveFormsModule,
     SharedModuleModule
   ],
-  providers:[ProductService]
+  providers:[]
 })
 export class ProductModule { }

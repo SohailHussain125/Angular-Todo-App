@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { AlertModalComponent } from 'src/app/shared-module/alert-modal/alert-modal.component';
@@ -16,15 +16,15 @@ export class ProductListComponent implements OnInit {
   modalRef: BsModalRef;
   deleted: any;
 
+  @ViewChild('modelTemplate') modelTemplate: TemplateRef<any>; 
   constructor(
     private http: HttpClient,
     private modalService: BsModalService,
     private route: Router,
     private productService: ProductService
 
-  ) {
+  ) {}
 
-  }
 
   ngOnInit(): void {
     this.productService.getProduct().subscribe(res => this.products = res)
@@ -34,11 +34,14 @@ export class ProductListComponent implements OnInit {
     this.route.navigateByUrl(`/product/update/${_id}`)
   }
   onHide() {
-    this.modalService.hide();
+    this.productService.modal.next({'open':false, template: this.modelTemplate})
+
+    // this.modalService.hide();
   }
 
   onDelete(template: TemplateRef<any>, _id) {
-    this.productService.isModal.next(true)
+    
+    this.productService.modal.next({'open':true, template: this.modelTemplate})
     // this.modalService.show(template);
     // this.deleted = _id
   }
@@ -53,8 +56,5 @@ export class ProductListComponent implements OnInit {
   onMoreDetail(item: any) {
     this.route.navigate([`/product/detail/${item._id}`])
   }
-  ngOnChanges(){
-    console.log(this.productService.isModal.subscribe((isloading)=>console.log(isloading,">>>>")));
-    
-  }
+ 
 }

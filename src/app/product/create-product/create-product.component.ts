@@ -62,6 +62,7 @@ export class CreateProductComponent implements OnInit {
         file: res.image
       });
     }) : ""
+    this.productService.modal.subscribe((item)=>console.log(item,">>>From Alert Modal comp."))
 
   }
 
